@@ -1,0 +1,5 @@
+metrics:
+  - name: exporter_bitcoin_usd
+    path: "{ .bpi.USD.rate_float }"
+  - name: exporter_bitcoin_pln
+    path: "{ .bpi.PLN.rate_float }"

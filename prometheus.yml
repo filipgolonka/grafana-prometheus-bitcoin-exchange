@@ -1,0 +1,11 @@
+scrape_configs:
+  - job_name: node_to_prometheus
+    metrics_path: /
+    static_configs:
+      - targets: ['node_to_prometheus:4000']
+  - job_name: prometheus_exporter
+    metrics_path: /probe
+    params:
+      target: ['https://api.coindesk.com/v1/bpi/currentprice/PLN.json']
+    static_configs:
+      - targets: ['prometheus_exporter:7979']
