@@ -4,10 +4,14 @@ services:
     build: .
     ports:
       - "9090:9090"
+    volumes:
+      - prometheus-storage:/prometheus
   grafana:
     image: grafana/grafana-enterprise:8.2.0
     ports:
       - "3000:3000"
+    volumes:
+      - grafana-storage:/var/lib/grafana
   node_to_prometheus:
     build: ./src
     ports:
@@ -16,3 +20,6 @@ services:
     build: ./prometheus-exporter
     ports:
       - "7979:7979"
+volumes:
+  prometheus-storage:
+  grafana-storage:
