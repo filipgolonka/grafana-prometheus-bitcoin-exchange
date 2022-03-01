@@ -6,6 +6,8 @@ WORKDIR /usr/src/app
 
 COPY . /usr/src/app
 
+RUN npm i --production
+
 EXPOSE 4000
 
 CMD [ "npm", "start" ]
